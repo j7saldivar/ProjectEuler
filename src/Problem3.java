@@ -1,3 +1,8 @@
+/**
+ * 
+ * @author Jorge Saldivar
+ *
+ */
 
 public class Problem3 {
 
