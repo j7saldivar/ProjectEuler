@@ -39,7 +39,7 @@ public class Problem8 {
 
 		try (BufferedReader br = new BufferedReader(
 				new FileReader(
-						"C:\\Users\\jorge.saldivar\\git\\ProjectEuler\\Files\\1000Digits.txt"))) {
+						"C:\\Users\\jorge.saldivar\\git\\ProjectEuler\\files\\1000Digits.txt"))) {
 
 			String readCurrentLine;
 
