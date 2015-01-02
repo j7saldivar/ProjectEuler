@@ -1,6 +1,6 @@
 /**
  * 
- * @author Jorge Saldivar
+ * @author Jorge.Saldivar
  *
  * Problem Description
  * The sum of the squares of the first ten natural numbers is, 1^2 + 2^2 + ... + 10^2 = 385 
@@ -11,7 +11,7 @@
  * and the square of the sum.
  */
 
-public class Problem6 {
+public class Problem006 {
 
 	public static void main(String[] args) {
 		

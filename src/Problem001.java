@@ -1,6 +1,6 @@
 /**
  * 
- * @author Jorge Saldivar
+ * @author Jorge.Saldivar
  *  
  * Problem Description
  * If we list all the natural numbers below 10 that are multiples of 3 or 5, 
@@ -8,7 +8,7 @@
  * the multiples of 3 or 5 below 1000.
  */
 
-public class Problem1 {
+public class Problem001 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

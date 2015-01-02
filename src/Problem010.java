@@ -1,6 +1,6 @@
 /**
  * 
- * @author Jorge Saldivar
+ * @author Jorge.Saldivar
  *
  * Problem Description
  * The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
@@ -9,7 +9,7 @@
 
 import static sharedmethods.CheckPrime.isPrime;
 
-public class Problem10 {
+public class Problem010 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

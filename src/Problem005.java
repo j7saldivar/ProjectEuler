@@ -1,6 +1,6 @@
 /**
  * 
- * @author Jorge Saldivar
+ * @author Jorge.Saldivar
  *
  * Problem Description
  * 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 
@@ -8,7 +8,7 @@
  * by all of the numbers from 1 to 20?
  */
 
-public class Problem5 {
+public class Problem005 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

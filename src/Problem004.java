@@ -1,6 +1,6 @@
 /**
  * 
- * @author Jorge Saldivar
+ * @author Jorge.Saldivar
  *
  * Problem Description
  * A palindromic number reads the same both ways. The largest palindrome made 
@@ -8,7 +8,7 @@
  * Find the largest palindrome made from the product of two 3-digit numbers.
  */
 
-public class Problem4 {
+public class Problem004 {
 
 	static boolean isPalindrome(String number) {
 		String copyNumber = "";
