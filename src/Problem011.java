@@ -68,8 +68,6 @@ public class Problem011 {
 
 		long right, left, down, up, downRight, downLeft;
 		right = left = down = up = downRight = downLeft = 1;
-		long product = 1;
-		long greatestProduct = 1;
 
 		for (int k = 0; k < 4; k++) {
 
@@ -105,8 +103,8 @@ public class Problem011 {
 
 		}
 
-		product = findMax(right, left, down, up, downRight, downLeft);
-		return product;
+		return findMax(right, left, down, up, downRight, downLeft);
+
 	}
 
 	private static long getGreatestProduct(long product, long greatestProduct) {
