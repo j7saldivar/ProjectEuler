@@ -32,7 +32,7 @@ import java.io.IOException;
 
 public class Problem011 {
 
-	static Integer[][] readFile() {
+	private static Integer[][] readFile() {
 
 		String[] readLineTemporal = new String[20];
 		Integer[][] thousandDigits = new Integer[20][20];
@@ -64,89 +64,83 @@ public class Problem011 {
 
 	}
 
+	private static long checkSides(Integer[][] thousandDigits, int i, int j) {
+
+		long right, left, down, up, downRight, downLeft;
+		right = left = down = up = downRight = downLeft = 1;
+		long product = 1;
+		long greatestProduct = 1;
+
+		for (int k = 0; k < 4; k++) {
+
+			// Check Right
+			if (j + k < 20) {
+				right *= thousandDigits[i][j + k];
+			}
+
+			// Check Left
+			if (j - k >= 0) {
+				left *= thousandDigits[i][j - k];
+			}
+
+			// Check Down
+			if (i + k < 20) {
+				down *= thousandDigits[i + k][j];
+			}
+
+			// Check Up
+			if (i - k >= 0) {
+				up *= thousandDigits[i - k][j];
+			}
+
+			// Check Diagonal Down Right
+			if (i + k < 20 && j + k < 20) {
+				downRight *= thousandDigits[i + k][j + k];
+			}
+
+			// Check Diagonal Down Left
+			if (i + k < 20 && j - k >= 0) {
+				downLeft *= thousandDigits[i + k][j - k];
+			}
+
+		}
+
+		product = findMax(right, left, down, up, downRight, downLeft);
+		return product;
+	}
+
+	private static long getGreatestProduct(long product, long greatestProduct) {
+		if (product > greatestProduct) {
+			greatestProduct = product;
+		}
+		
+		return greatestProduct;
+	}
+
+	private static long findMax(long... vals) {
+		long max = 0;
+
+		for (long l : vals) {
+			if (l > max)
+				max = l;
+		}
+
+		return max;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Integer[][] thousandDigits = readFile();
 		long product = 1;
 		long greatestProduct = 1;
-		
-		//Check direction on debug mode
-		long seeDebug = 0;
 
 		for (int i = 0; i < 20; i++) {
 			for (int j = 0; j < 20; j++) {
-
-				// CHECK RIGHT
-				product = 1;
-				for (int k = 0; k < 4; k++) {
-					if (j + k < 20) {
-						product *= seeDebug = thousandDigits[i][j + k];
-					}
-				}
-				if (product > greatestProduct) {
-					greatestProduct = product;
-				}
-
-				// CHECK LEFT
-				product = 1;
-				for (int k = 0; k < 4; k++) {
-					if (j - k >= 0) {
-						product *= seeDebug = thousandDigits[i][j - k];
-					}
-				}
-				if (product > greatestProduct) {
-					greatestProduct = product;
-				}
-
-				// CHECK DOWN
-				product = 1;
-				for (int k = 0; k < 4; k++) {
-					if (i + k < 20) {
-						product *= seeDebug = thousandDigits[i + k][j];
-					}
-				}
-				if (product > greatestProduct) {
-					greatestProduct = product;
-				}
-
-				// CHECK UP
-				product = 1;
-				for (int k = 0; k < 4; k++) {
-					if (i - k >= 0) {
-						product *= seeDebug = thousandDigits[i - k][j];
-					}
-				}
-				if (product > greatestProduct) {
-					greatestProduct = product;
-				}
-
-				// CHECK DIAGONAL DOWN RIGHT
-				product = 1;
-				for (int k = 0; k < 4; k++) {
-					if (i + k < 20 && j + k < 20) {
-						product *= seeDebug = thousandDigits[i + k][j + k];
-					}
-				}
-				if (product > greatestProduct) {
-					greatestProduct = product;
-				}
-
-				// CHECK DIAGONAL DOWN LEFT
-				product = 1;
-				for (int k = 0; k < 4; k++) {
-					if (i + k < 20 && j - k >= 0) {
-						product *= seeDebug = thousandDigits[i + k][j - k];
-					}
-				}
-				if (product > greatestProduct) {
-					greatestProduct = product;
-				}
-
+				product = checkSides(thousandDigits, i, j);
+				greatestProduct = getGreatestProduct(product, greatestProduct);
 			}
-
 		}
 
 		System.out.println(greatestProduct);
-
 	}
 }
